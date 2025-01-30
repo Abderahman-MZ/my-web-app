@@ -45,4 +45,5 @@ jobs:
 
     # Check Docker Hub Rate Limit (if experiencing issues)
     - name: Check Docker Rate Limit
-      run: curl -s --head https://hub.docker.com | grep "X-RateLimit-Remaining"
+      run: |
+        curl -s --head https://hub.docker.com || echo "Rate limit check skipped"
